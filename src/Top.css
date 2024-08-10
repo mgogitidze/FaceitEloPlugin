@@ -3,7 +3,7 @@
     border-radius: 99999px;
     display: flex;
     align-items: center;
-    padding: 4px 4px 4px 1px;
+    padding: 8px 8px 8px 10px;
     background: rgb(232, 1, 40);
     gap: 5px;
 }
