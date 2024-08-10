@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/FaceitEloPlugin/static/js/main.09619a57.js",
-    "main.css": "/FaceitEloPlugin/static/css/main.f07ddd64.css",
+    "main.css": "/FaceitEloPlugin/static/css/main.e6c13ad2.css",
+    "main.js": "/FaceitEloPlugin/static/js/main.9134e946.js",
     "static/js/453.a1a0e49a.chunk.js": "/FaceitEloPlugin/static/js/453.a1a0e49a.chunk.js",
     "static/media/logo.svg": "/FaceitEloPlugin/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/FaceitEloPlugin/index.html",
-    "main.09619a57.js.map": "/FaceitEloPlugin/static/js/main.09619a57.js.map",
-    "main.f07ddd64.css.map": "/FaceitEloPlugin/static/css/main.f07ddd64.css.map",
+    "main.e6c13ad2.css.map": "/FaceitEloPlugin/static/css/main.e6c13ad2.css.map",
+    "main.9134e946.js.map": "/FaceitEloPlugin/static/js/main.9134e946.js.map",
     "453.a1a0e49a.chunk.js.map": "/FaceitEloPlugin/static/js/453.a1a0e49a.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.09619a57.js",
-    "static/css/main.f07ddd64.css"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9134e946.js"
   ]
 }
