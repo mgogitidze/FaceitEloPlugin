@@ -2,8 +2,8 @@ import "./Top.css"
 
 export default function Top(props) {
 
-    return <div id="top">
-        <div style={{fontSize: 15}}>#{props.top}</div>
+    return <div id="top-wrapper">
+        <div id="top-value">#{props.top}</div>
         <div id="top-icon">
             <svg viewBox="0 0 30 30" fill="#e80128" xmlns="http://www.w3.org/2000/svg" height="30" width="30"
                  className="sc-klVQfs hETIkZ">

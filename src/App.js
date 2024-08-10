@@ -15,6 +15,7 @@ function App() {
                 headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
             }
         ).then((response) => response.json())
+
         const playerTop = await fetch(`https://open.faceit.com/data/v4/rankings/games/cs2/regions/EU/players/${player.player_id}`,{
             headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
         }).then((response) => response.json())

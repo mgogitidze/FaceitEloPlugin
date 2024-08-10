@@ -1,14 +1,16 @@
-#top{
-    font-size: 30px;
+#top-wrapper{
     border: solid;
     border-radius: 99999px;
     display: flex;
     align-items: center;
-    padding: 2px 2px 2px 5px;
+    padding: 4px 4px 4px 1px;
     background: rgb(232, 1, 40);
     gap: 5px;
 }
 #top-icon{
     display: flex;
     align-items: center;
+}
+#top-value{
+    font-size: 25px;
 }
