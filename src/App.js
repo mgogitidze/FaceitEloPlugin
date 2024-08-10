@@ -4,18 +4,22 @@ import {useEffect, useState} from "react";
 
 function App() {
     const [elo, setElo] = useState(0);
-    const getApiData = async () => {
-        const response = await fetch(
-            "https://open.faceit.com/data/v4/players?nickname=m3wsu&game=cs2", {
-                headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
-            }
-        ).then((response) => response.json());
-        console.log(response)
-        setElo(response.games.cs2.faceit_elo);
-    };
+    // const getApiData = async () => {
+    //     const response = await fetch(
+    //         "https://open.faceit.com/data/v4/players?nickname=m3wsu&game=cs2", {
+    //             headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
+    //         }
+    //     ).then((response) => response.json());
+    //     console.log(response)
+    //     setElo(response.games.cs2.faceit_elo);
+    // };
     useEffect(() => {
-        getApiData();
-    }, []);
+        const interval = setInterval(() => {
+            setElo(elo + 1);
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [elo]);
     return (
         <div className="App">
             <main>
