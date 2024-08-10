@@ -1,0 +1,14 @@
+#top{
+    font-size: 30px;
+    border: solid;
+    border-radius: 99999px;
+    display: flex;
+    align-items: center;
+    padding: 2px 2px 2px 5px;
+    background: rgb(232, 1, 40);
+    gap: 5px;
+}
+#top-icon{
+    display: flex;
+    align-items: center;
+}

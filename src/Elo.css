@@ -1,0 +1,8 @@
+#elo-wrapper{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+#elop{
+    font-size: 30px;
+}
