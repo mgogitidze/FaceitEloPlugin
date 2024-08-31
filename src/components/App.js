@@ -7,6 +7,7 @@ import AfterGameAnimation from "./AfterGameAnimation";
 function App() {
     const [elo, setElo] = useState(null);
     const [top, setTop] = useState(null);
+    const [show, setShow] = useState(false)
 
     const queryParameters = new URLSearchParams(window.location.search)
     const mode = queryParameters.get("mode")
@@ -28,6 +29,7 @@ function App() {
 
         setElo(player.games.cs2.faceit_elo);
         setTop(playerTop.position);
+        setShow(true)
     };
 
     useEffect(() => {
@@ -39,13 +41,10 @@ function App() {
 
     return (
         <div className="App">
-            {nickname === null
-                ? null
-                : <main>{(mode === "dynamic")
-                    ? <AfterGameAnimation elo={elo}/>
-                    : <div className="wrapper"><Top top={top}/><Elo elo={elo}/></div>
-                } </main>
-            }
+            {show ? <main>{(mode === "dynamic")
+                ? <AfterGameAnimation elo={elo}/>
+                : <div className="wrapper"><Top top={top}/><Elo elo={elo}/></div>
+            } </main> : null}
         </div>
     );
 }
