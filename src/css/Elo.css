@@ -1,11 +1,11 @@
 #elo-wrapper{
     display: flex;
-    gap: 5px;
+    gap: 20px;
     align-items: center;
 }
 #elop{
-    font-size: 25px;
+    font-size: 100px;
 }
 #elo{
-    font-size: 50px;
+    font-size: 200px;
 }
