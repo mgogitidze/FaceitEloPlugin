@@ -1,0 +1,14 @@
+ul {
+    display:flex;
+    gap: 100px;
+    list-style: none;
+}
+li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.liElem{
+    display: flex;
+    justify-content: center;
+}

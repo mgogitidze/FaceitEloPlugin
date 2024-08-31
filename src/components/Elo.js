@@ -1,4 +1,4 @@
-import './Elo.css';
+import '../css/Elo.css';
 import React from "react";
 
 export default function Elo(props) {
