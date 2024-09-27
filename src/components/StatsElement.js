@@ -1,7 +1,7 @@
 function StatsElement(props) {
     return <div className="ds">
-        <div className="liElem"> {props.value}</div>
-        <div className="liElem">{props.name}</div>
+        <div className="ds_element"> {props.value}</div>
+        <div className="ds_element">{props.name}</div>
     </div>
 }
 

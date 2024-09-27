@@ -5,7 +5,7 @@ function AvatarHolder(props) {
     return <div className="avatar__wrapper">
         <img className="avatar" src={props.src} alt=""/>
         <div className="name__wrapper">
-            {props.country ? <ReactCountryFlag countryCode={props.country}/> : null}
+            {props.country ? <ReactCountryFlag countryCode={props.country} svg/> : null}
             <span className="name">{props.name}</span>
         </div>
         <div className="ranking__wrapper">

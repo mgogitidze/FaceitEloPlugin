@@ -3,7 +3,6 @@ import Stats from "./Stats";
 import Elo from "./Elo";
 import AvatarHolder from "./AvatarHolder";
 import {useEffect, useState} from "react";
-import {update} from "@react-spring/web";
 
 function AfterGameAnimation(props) {
     const [lastMatchId, setLastMatchId] = useState(null)
@@ -83,7 +82,7 @@ function AfterGameAnimation(props) {
     }
 
     return <> {
-        show && elo && top && diff ? <div className="aftergame__wrapper">
+        show && elo && top && diff && imgSrc ? <div className="aftergame__wrapper">
             <AvatarHolder src={imgSrc} country={country} name={name} top={top}/>
             <Elo elo={elo} diff={diff}/>
             <Stats stats={stats}/>
