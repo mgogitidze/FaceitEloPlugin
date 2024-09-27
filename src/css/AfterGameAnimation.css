@@ -1,4 +1,64 @@
-.fadeWindow{
+span{
+    color: #ffffff;
+}
+.name{
+    font-size: 0.85em;
+}
+.avatar{
+    border-radius: 99999px;
+    width: 240px;
+    height: 240px;
+}
+.ranking__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.name__wrapper{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+}
+.avatar__wrapper{
+    opacity: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+    animation: fadeUpMove 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#elo-wrapper{
+    opacity: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+    animation: fadeUpMove 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+    font-size: 80px;
+}
+.diff__wrapper{
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    position: relative;
+    animation: diffMove 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.aftergame__wrapper{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -6,21 +66,47 @@
     top: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 10;
-    animation: fadeIn 1s ease-in both;
     display: flex;
+    animation: fade 1s;
     flex-direction: column;
-    gap: 100px;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.aftergame__wrapper{
+    animation: fadeOut 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+.stats__wrapper {
+    opacity: 0;
+    position: relative;
+    display: flex;
+    gap: 75px;
+    animation: fadeUpMove 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    .ds {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+}
+@keyframes fade {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@keyframes fadeUpMove {
+    0% {opacity: 0; top: +10%}
+    100% {opacity: 1; top: 0}
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 0, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+@keyframes diffMove {
+    0% {opacity: 0; top: +10%}
+    50% {opacity: 1; top: 0}
+    100% {opacity: 0; top: -10%}
+}
+@keyframes fadeOut {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
 }

@@ -1,9 +1,8 @@
-import "../css/Stats.css"
 function StatsElement(props) {
-    return <li>
+    return <div className="ds">
         <div className="liElem"> {props.value}</div>
         <div className="liElem">{props.name}</div>
-    </li>
+    </div>
 }
 
 export default StatsElement

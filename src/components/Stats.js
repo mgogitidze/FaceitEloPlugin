@@ -1,12 +1,11 @@
-import "../css/Stats.css"
 import StatsElement from "./StatsElement";
-function Stats() {
-    return <ul>
-        <StatsElement name={"KILLS"} value={35}/>
-        <StatsElement name={"DEATHS"} value={27}/>
-        <StatsElement name={"K/D"} value={1.3}/>
-        <StatsElement name={"K/R"} value={1}/>
-    </ul>
+function Stats(props) {
+    return <div className="stats__wrapper">
+        <StatsElement name={"KILLS"} value={props.stats.kills}/>
+        <StatsElement name={"DEATHS"} value={props.stats.deaths}/>
+        <StatsElement name={"K/D"} value={props.stats.kd}/>
+        <StatsElement name={"K/R"} value={props.stats.kr}/>
+    </div>
 }
 
 export default Stats

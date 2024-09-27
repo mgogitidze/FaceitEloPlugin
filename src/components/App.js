@@ -5,13 +5,12 @@ import {useEffect, useState} from "react";
 import AfterGameAnimation from "./AfterGameAnimation";
 
 function App() {
-    const [elo, setElo] = useState(null);
-    const [top, setTop] = useState(null);
-    const [show, setShow] = useState(false)
+    const [playerId, setPlayerId] = useState(null);
 
     const queryParameters = new URLSearchParams(window.location.search)
     const mode = queryParameters.get("mode")
     const nickname = queryParameters.get("player")
+
 
     const getApiData = async () => {
         if (nickname === null)
@@ -23,28 +22,20 @@ function App() {
             }
         ).then((response) => response.json())
 
-        const playerTop = await fetch(`https://open.faceit.com/data/v4/rankings/games/cs2/regions/EU/players/${player.player_id}`, {
-            headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
-        }).then((response) => response.json())
-
-        setElo(player.games.cs2.faceit_elo);
-        setTop(playerTop.position);
-        setShow(true)
+        setPlayerId(player.player_id)
     };
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            getApiData()
-        }, 1000);
-        return () => clearInterval(interval);
-    }, [elo]);
+        console.log("init")
+        getApiData()
+    }, []);
 
     return (
         <div className="App">
-            {show ? <main>{(mode === "dynamic")
-                ? <AfterGameAnimation elo={elo}/>
-                : <div className="wrapper"><Top top={top}/><Elo elo={elo}/></div>
-            } </main> : null}
+            {playerId != null ? (<main><AfterGameAnimation playerId={playerId}/>
+
+                {/*// : <div className="wrapper"><Top top={top}/><Elo elo={elo}/></div>*/}
+             </main>) : null}
         </div>
     );
 }
