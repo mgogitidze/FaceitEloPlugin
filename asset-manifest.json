@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/FaceitEloPlugin/static/css/main.2134c29c.css",
-    "main.js": "/FaceitEloPlugin/static/js/main.3315d421.js",
+    "main.css": "/FaceitEloPlugin/static/css/main.137f29cc.css",
+    "main.js": "/FaceitEloPlugin/static/js/main.f3696a90.js",
     "index.html": "/FaceitEloPlugin/index.html",
-    "main.2134c29c.css.map": "/FaceitEloPlugin/static/css/main.2134c29c.css.map",
-    "main.3315d421.js.map": "/FaceitEloPlugin/static/js/main.3315d421.js.map"
+    "main.137f29cc.css.map": "/FaceitEloPlugin/static/css/main.137f29cc.css.map",
+    "main.f3696a90.js.map": "/FaceitEloPlugin/static/js/main.f3696a90.js.map"
   },
   "entrypoints": [
-    "static/css/main.2134c29c.css",
-    "static/js/main.3315d421.js"
+    "static/css/main.137f29cc.css",
+    "static/js/main.f3696a90.js"
   ]
 }
