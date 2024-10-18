@@ -22,8 +22,8 @@ function AfterGameAnimation(props) {
 
     useEffect(() => {
         initPlayerData()
+        checkLastGame(props.playerId)
         const interval = setInterval(() => {
-            console.log("trigger 1")
             checkLastGame(props.playerId)
         }, 15000);
 
@@ -97,7 +97,7 @@ function AfterGameAnimation(props) {
     }
 
     return <> {
-        elo && top && diff != null && imgSrc ? <div className={ show ? "show aftergame__wrapper" : "hide aftergame__wrapper"}>
+        elo && top && diff != null && imgSrc && lastMatchId ? <div className={ show ? "show aftergame__wrapper" : "hide aftergame__wrapper"}>
             <AvatarHolder show={show} src={imgSrc} country={country} name={name} top={top}/>
             <Elo show={show} elo={elo} diff={diff}/>
             <Stats show={show} stats={stats}/>

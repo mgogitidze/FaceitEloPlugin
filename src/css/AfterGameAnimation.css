@@ -86,6 +86,9 @@ span{
         position: relative;
         text-align: center;
         color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 .show__stats{
