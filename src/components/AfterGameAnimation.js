@@ -25,7 +25,7 @@ function AfterGameAnimation(props) {
         checkLastGame(props.playerId)
         const interval = setInterval(() => {
             checkLastGame(props.playerId)
-        }, 15000);
+        }, 3000);
 
 
         return () => clearInterval(interval);
