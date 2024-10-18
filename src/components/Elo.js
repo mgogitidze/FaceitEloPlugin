@@ -10,12 +10,13 @@ export default function Elo(props) {
     })
 
     return <div style={{margin: "25px 0 50px 0px"}}>
-        <div id="elo-wrapper">
+        <div className={props.show ? "show__elo elo__wrapper" : "elo__wrapper"}>
             <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
-            <div id="elop">ELO</div>
+            <div>ELO</div>
         </div>
-        <div style={{color: Math.sign(props.diff) === -1 ? "red" : "green"}} className="diff__wrapper">
-            <div>{props.diff}</div>
+        <div className={props.show ? "show__diff diff__wrapper" : "diff__wrapper"} style={{color: Math.sign(props.diff) === -1 ? "red" : "green"}}>
+            <div style={{position: "relative", top: "-3px", left: "2px"}}>{Math.sign(props.diff) === -1 ? null : "+"}</div>
+            <div style={{marginRight: "3px", marginLeft: "2px"}}>{props.diff}</div>
             <div>ELO</div>
         </div>
     </div>

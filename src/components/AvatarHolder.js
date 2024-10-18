@@ -2,7 +2,7 @@ import ReactCountryFlag from "react-country-flag"
 import Top from "./Top";
 
 function AvatarHolder(props) {
-    return <div className="avatar__wrapper">
+    return <div className={props.show ? "show__avatar avatar__wrapper" : "avatar__wrapper"}>
         <img className="avatar" src={props.src} alt=""/>
         <div className="name__wrapper">
             {props.country ? <ReactCountryFlag countryCode={props.country} svg/> : null}

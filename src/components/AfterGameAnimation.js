@@ -16,18 +16,29 @@ function AfterGameAnimation(props) {
     const [imgSrc, setImgSrc] = useState(null)
 
     useEffect(() => {
+        console.log("trigger")
         updateStatsAfterGame()
     }, [lastMatchId])
 
     useEffect(() => {
         initPlayerData()
         const interval = setInterval(() => {
+            console.log("trigger 1")
             checkLastGame(props.playerId)
-        }, 10000);
+        }, 15000);
 
 
         return () => clearInterval(interval);
     }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setLastMatchId(null)
+    //         console.log("clearing")
+    //     }, 5000);
+    //
+    //
+    //     return () => clearInterval(interval);
+    // }, []);
 
     async function updateStatsAfterGame() {
         const player = await fetchPlayerData(props.playerId)
@@ -36,7 +47,7 @@ function AfterGameAnimation(props) {
         }).then((response) => response.json())
         const updatedElo = player.games.cs2.faceit_elo
         setTop(playerTop.position);
-        setDiff(-100)
+        setDiff(elo ? updatedElo - elo : 0)
         setElo(updatedElo)
 
         const statsResponse = await fetch(`https://open.faceit.com/data/v4/players/${props.playerId}/games/cs2/stats?limit=1`, {
@@ -51,12 +62,13 @@ function AfterGameAnimation(props) {
             kr: playerStats["K/R Ratio"]
         })
         setShow(true)
+        setTimeout(() => {
+            setShow(false)
+        }, 9000)
     }
 
     async function initPlayerData() {
         const playerData = await fetchPlayerData(props.playerId)
-        console.log("INITA")
-        console.log(playerData)
         setImgSrc(playerData.avatar)
         setCountry(playerData.country)
         setName(playerData.nickname)
@@ -78,14 +90,17 @@ function AfterGameAnimation(props) {
         const lastGames = await fetch(`https://open.faceit.com/data/v4/players/${playerId}/history`, {
             headers: {Authorization: 'Bearer d0e81fa3-626f-4fe5-aaf7-a8c1e7f7e3be'}
         }).then((response) => response.json())
-        setLastMatchId(lastGames.items[0].match_id)
+
+        setLastMatchId((prev) => {
+            return lastGames.items[0].match_id
+        })
     }
 
     return <> {
-        show && elo && top && diff && imgSrc ? <div className="aftergame__wrapper">
-            <AvatarHolder src={imgSrc} country={country} name={name} top={top}/>
-            <Elo elo={elo} diff={diff}/>
-            <Stats stats={stats}/>
+        elo && top && diff != null && imgSrc ? <div className={ show ? "show aftergame__wrapper" : "hide aftergame__wrapper"}>
+            <AvatarHolder show={show} src={imgSrc} country={country} name={name} top={top}/>
+            <Elo show={show} elo={elo} diff={diff}/>
+            <Stats show={show} stats={stats}/>
         </div> : null} </>
 }
 
